@@ -19,8 +19,8 @@ export const possibleTileContents = [
 export function StartScreen({ start }) {
   return (
     <>
-      <div className="min-h-screen w-screen \npy-12 px-4 grid place-items-center">
-        <div className="max-w-[40rem] h-fit mx-auto py-20 pb-28 px-20 bg-pink-400 bg-opacity-15 flex flex-col justify-center items-center gap-4 rounded-lg">
+      <div className="min-h-[100dvh] w-screen py-12 px-4 grid place-items-center">
+        <div className="max-w-[40rem] h-fit mx-auto py-20 pb-28 px-20 bg-pink-400 bg-opacity-15 flex flex-col justify-center items-center gap-4 rounded-lg text-center">
           <h1 className="font-bold text-2xl text-pink-500">Memory</h1>
           <p className={"text-pink-500 text-base"}>
             Flip over tile looking for pairs
@@ -120,11 +120,14 @@ export function PlayScreen({ end }) {
 
   return (
     <>
-      <div className="min-h-screen w-screen p-4 grid place-items-center">
+      <div className="min-h-[100dvh] w-screen p-4 grid place-items-center">
         <div className="flex flex-col items-center justify-center gap-4">
-          <span className="col-span-full flex gap-2">Tries:{tryCount}</span>
+          <span className="col-span-full flex items-center gap-2 font-medium text-[#6466f1] text-lg">
+            Tries{" "}
+            <span className="px-3 bg-[#c7d2ff] rounded-lg">{tryCount}</span>
+          </span>
 
-          <div className="grid grid-cols-4 gap-5 place-items-center bg-[#eef2ff] p-5 rounded-lg">
+          <div className="mt-8 grid grid-cols-4 gap-5 place-items-center bg-[#eef2ff] p-5 rounded-lg">
             {getTiles(16).map((tile, i) => (
               <Tile key={i} flip={() => flip(i)} {...tile} />
             ))}
