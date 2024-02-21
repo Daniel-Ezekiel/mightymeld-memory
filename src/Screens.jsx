@@ -124,7 +124,7 @@ export function PlayScreen({ end }) {
         <div className="flex flex-col items-center justify-center gap-4">
           <span className="col-span-full flex gap-2">Tries:{tryCount}</span>
 
-          <div className="grid grid-cols-4 gap-6 place-items-center bg-[#eef2ff] p-4 rounded-lg">
+          <div className="grid grid-cols-4 gap-5 place-items-center bg-[#eef2ff] p-5 rounded-lg">
             {getTiles(16).map((tile, i) => (
               <Tile key={i} flip={() => flip(i)} {...tile} />
             ))}
